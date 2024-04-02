@@ -41,7 +41,38 @@ const Home: NextPage = () => {
                   Confirmation
                 </nav>
               </div>
-              {activeTab === "tab1" && <div>This is Tab 1</div>}
+              {activeTab === "tab1" && (
+                <>
+                  <div>
+                    <h1 className="text-2xl">Swap Shares</h1>
+                  </div>
+                  <div>
+                    <p className="text">Startup ID</p>
+                    <input type="number" placeholder="0" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Name of Startup</p>
+                    <input type="text" placeholder="Name of Startup" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Symbol</p>
+                    <input type="text" placeholder="SYMBL" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Owner Address</p>
+                    <input type="text" placeholder="0x...." className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Total Shares</p>
+                    <input type="number" placeholder="1000" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Price per Share</p>
+                    <input type="number" placeholder="10" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <button className="btn btn-primary font-light text-white rounded w-full">Create Startup</button>
+                </>
+              )}
               {activeTab === "tab2" && (
                 <>
                   <div>
@@ -82,10 +113,29 @@ const Home: NextPage = () => {
                       <button className="btn btn-primary font-light text-white rounded w-full">Start Buying</button>
                     </>
                   )}
-                  {BuySell === "sell" && <div>This is the Sell section</div>}
+                  {BuySell === "sell" && (
+                    <>
+                      <input type="number" placeholder="0" className="w-full bg-white rounded border-black" />
+                      <p className="">Amount to be received</p>
+                      <div className="flex flex-row justify-between">
+                        <div className="">1000</div>
+                        <select name="received" id="received" className=" bg-white rounded border-black">
+                          <option value="eth">ETH</option>
+                          <option value="usdc">USDC</option>
+                        </select>
+                      </div>
+                      <div className="flex flex-row justify-between">
+                        <div className="">You are selling 1′000 DAKS for 13′230.8 XCHF.</div>
+                        <button className="btn btn-sm btn-secondary font-light bg-white text-black rounded">
+                          Details
+                        </button>
+                      </div>
+                      <button className="btn btn-primary font-light text-white rounded w-full">Start Selling</button>
+                    </>
+                  )}
                 </>
               )}
-              {activeTab === "tab3" && <div>This is Tab 3</div>}
+              {activeTab === "tab3" && <div>This is the confirmation page</div>}
             </div>
           </div>
         </div>
