@@ -30,8 +30,8 @@ contract StartupFactory is Pausable, AccessControlEnumerable {
         uint256 _startupId,
         string memory _name,
         string memory _symbol,
-        uint256 _amount,
-        uint256 _price
+        uint256 _totalShareCount,
+        uint256 _pricePerShare
     )
         public
         onlyRole(STARTUP_OWNER_ROLE)
@@ -46,7 +46,11 @@ contract StartupFactory is Pausable, AccessControlEnumerable {
         );
 
         StartupSwap(clone).initialize(
-            _name, _symbol, msg.sender, _amount, _price
+            _name,
+            _symbol,
+            msg.sender,
+            _totalShareCount,
+            _pricePerShare
         );
 
         startupContractAddresses.push(clone);
@@ -72,19 +76,15 @@ contract StartupFactory is Pausable, AccessControlEnumerable {
         return ownerToStartup[msg.sender];
     }
 
-    function addStartupOwner(address _startupOwner)
-        public
-        onlyRole(DEFAULT_ADMIN_ROLE)
-        whenNotPaused
-    {
+    function addStartupOwner(
+        address _startupOwner
+    ) public onlyRole(DEFAULT_ADMIN_ROLE) whenNotPaused {
         _grantRole(STARTUP_OWNER_ROLE, _startupOwner);
     }
 
-    function removeStartupOwner(address _startupOwner)
-        public
-        onlyRole(DEFAULT_ADMIN_ROLE)
-        whenNotPaused
-    {
+    function removeStartupOwner(
+        address _startupOwner
+    ) public onlyRole(DEFAULT_ADMIN_ROLE) whenNotPaused {
         _revokeRole(STARTUP_OWNER_ROLE, _startupOwner);
     }
 
@@ -100,10 +100,9 @@ contract StartupFactory is Pausable, AccessControlEnumerable {
         payable(msg.sender).transfer(address(this).balance);
     }
 
-    function _setContractOwner(address _contractOwner)
-        public
-        onlyRole(DEFAULT_ADMIN_ROLE)
-    {
+    function _setContractOwner(
+        address _contractOwner
+    ) public onlyRole(DEFAULT_ADMIN_ROLE) {
         contractOwner = _contractOwner;
     }
 
