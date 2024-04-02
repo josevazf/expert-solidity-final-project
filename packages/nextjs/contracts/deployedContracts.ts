@@ -44,19 +44,6 @@ const deployedContracts = {
         },
         {
           type: "function",
-          name: "amount",
-          inputs: [],
-          outputs: [
-            {
-              name: "",
-              type: "uint256",
-              internalType: "uint256",
-            },
-          ],
-          stateMutability: "view",
-        },
-        {
-          type: "function",
           name: "approve",
           inputs: [
             {
@@ -138,12 +125,12 @@ const deployedContracts = {
               internalType: "address",
             },
             {
-              name: "_amount",
+              name: "_totalShareCount",
               type: "uint256",
               internalType: "uint256",
             },
             {
-              name: "_price",
+              name: "_pricePerShare",
               type: "uint256",
               internalType: "uint256",
             },
@@ -161,7 +148,7 @@ const deployedContracts = {
               internalType: "address",
             },
             {
-              name: "_amount",
+              name: "_totalShareCount",
               type: "uint256",
               internalType: "uint256",
             },
@@ -197,7 +184,7 @@ const deployedContracts = {
         },
         {
           type: "function",
-          name: "price",
+          name: "pricePerShare",
           inputs: [],
           outputs: [
             {
@@ -213,7 +200,7 @@ const deployedContracts = {
           name: "sellShares",
           inputs: [
             {
-              name: "_amount",
+              name: "_totalShareCount",
               type: "uint256",
               internalType: "uint256",
             },
@@ -230,6 +217,19 @@ const deployedContracts = {
               name: "",
               type: "string",
               internalType: "string",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "totalShareCount",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "uint256",
+              internalType: "uint256",
             },
           ],
           stateMutability: "view",
@@ -601,12 +601,12 @@ const deployedContracts = {
               internalType: "string",
             },
             {
-              name: "_amount",
+              name: "_totalShareCount",
               type: "uint256",
               internalType: "uint256",
             },
             {
-              name: "_price",
+              name: "_pricePerShare",
               type: "uint256",
               internalType: "uint256",
             },
