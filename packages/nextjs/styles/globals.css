@@ -2,6 +2,13 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+@layer base {
+  input {
+    @apply bg-gray-200 border-2 border-gray-300 rounded-md p-3; /* Example styles */
+    /* Add other Tailwind utility classes as needed */
+  }
+}
+
 :root,
 [data-theme] {
   background: oklch(var(--b2));
