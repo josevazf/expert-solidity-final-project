@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth";
 
-export const GetStartupAddresses = () => {
+export const GetStartupAddress = ({
+  setSelectedAddress,
+}: {
+  setSelectedAddress: React.Dispatch<React.SetStateAction<string>>;
+}) => {
   const { data: getStartupAddresses, isLoading: isStartupAddressesLoading } = useScaffoldContractRead({
     contractName: "StartupFactory",
     functionName: "getStartupAddresses",
@@ -12,10 +16,11 @@ export const GetStartupAddresses = () => {
   const addressesArray = getStartupAddresses ? getStartupAddresses.toString().split(",") : [];
 
   // State variable to store the selected address
-  const [selectedAddress, setSelectedAddress] = useState("");
+  const [selectedAddressState, setSelectedAddressState] = useState("");
 
   // Function to handle change in selected address
   const handleAddressChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    setSelectedAddressState(event.target.value);
     setSelectedAddress(event.target.value);
   };
 
@@ -27,7 +32,7 @@ export const GetStartupAddresses = () => {
       ) : (
         <div>
           {addressesArray.length > 0 ? (
-            <select value={selectedAddress} onChange={handleAddressChange}>
+            <select value={selectedAddressState} onChange={handleAddressChange}>
               <option value="">Select an address</option>
               {addressesArray.map((address, index) => (
                 <option key={index} value={address}>
