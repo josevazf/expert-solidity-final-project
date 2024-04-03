@@ -7,6 +7,16 @@ import "@openzeppelin/contracts/proxy/Clones.sol";
 
 import {StartupSwap} from "./StartupSwap.sol";
 
+/**
+ * Network: Sepolia
+ * Aggregator: ETH/USD
+ * Address: 0x694AA1769357215DE4FAC081bf1f309aDC325306
+ * 
+ * Network: Mumbai Testnet
+ * Aggregator: MATIC/USD
+ * Address: 0xd0D5e3DB44DE05E9F294BB0a3bEEaF030DE24Ada
+ */
+
 contract StartupFactory is Pausable, AccessControlEnumerable {
     bytes32 public constant STARTUP_OWNER_ROLE = keccak256("STARTUP_OWNER");
 
@@ -19,11 +29,14 @@ contract StartupFactory is Pausable, AccessControlEnumerable {
 
     address public contractOwner;
 
+    address private oracleImplementation;
+
     event StartupCreated(address indexed owner, address indexed startup);
 
-    constructor(address _startupSwapImplementation) {
+    constructor(address _startupSwapImplementation, address _oracleImplementation) {
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         startupSwapImplementation = _startupSwapImplementation;
+        oracleImplementation = _oracleImplementation;
     }
 
     function createStartup(
@@ -46,11 +59,13 @@ contract StartupFactory is Pausable, AccessControlEnumerable {
         );
 
         StartupSwap(clone).initialize(
+            _startupId,
             _name,
             _symbol,
             msg.sender,
             _totalShareCount,
-            _pricePerShare
+            _pricePerShare,
+            oracleImplementation
         );
 
         startupContractAddresses.push(clone);
