@@ -1,5 +1,5 @@
 import { useTargetNetwork } from "../hooks/scaffold-eth/useTargetNetwork";
-import * as shareTokenJson from "./assets/share_token.json";
+import * as shareTokenJson from "./assets/shareTokenABI.json";
 import { useAccount, useContractRead } from "wagmi";
 
 export function BalanceOf({ selectedAddress }: { selectedAddress: string }) {

@@ -1,7 +1,7 @@
 import * as React from "react";
 import { useState } from "react";
 import { useTargetNetwork } from "../hooks/scaffold-eth/useTargetNetwork";
-import * as shareTokenJson from "./assets/share_token.json";
+import * as shareTokenJson from "./assets/shareTokenABI.json";
 import { parseEther } from "viem";
 import { useContractWrite } from "wagmi";
 import { ArrowSmallRightIcon } from "@heroicons/react/24/outline";
@@ -24,7 +24,11 @@ export const SellShares = ({ selectedAddress }: { selectedAddress: string }) => 
 
   const handleSetGreeting = async () => {
     try {
-      await writeTx(writeAsync, { blockConfirmations: 1 });
+      await writeTx(writeAsync, {
+        onBlockConfirmation: txnReceipt => {
+          console.log("📦 Transaction blockHash", txnReceipt.blockHash);
+        },
+      });
     } catch (e) {
       console.log("Unexpected error in writeTx", e);
     }

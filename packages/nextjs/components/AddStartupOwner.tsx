@@ -9,7 +9,7 @@ export const AddStartupOwner = () => {
   const { writeAsync, isLoading } = useScaffoldContractWrite({
     contractName: "StartupFactory",
     functionName: "addStartupOwner",
-    args: [address], // Pass the value of the address state variable instead of the state setter function
+    args: [address],
     onBlockConfirmation: txnReceipt => {
       console.log("📦 Transaction blockHash", txnReceipt.blockHash);
     },
