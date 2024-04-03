@@ -29,23 +29,41 @@ export const CreateStartup = () => {
 
   return (
     <>
-      <h2 className="font-bold m-2">Create Startup</h2>
-      <InputBase name="startupName" placeholder="Share name" value={startupName} onChange={setStartupName} />
-      <InputBase name="startupSymbol" placeholder="Share symbol" value={startupSymbol} onChange={setStartupSymbol} />
-      <InputBase
-        name="startupShareCount"
-        placeholder="Share count"
-        value={startupShareCount}
-        onChange={setStartupShareCount}
-      />
-      <InputBase
-        name="startupPricePShare"
-        placeholder="Price USD/Share"
-        value={startupPricePShare}
-        onChange={setStartupPricePShare}
-      />
-      <button className="btn btn-primary h-[2.2rem] min-h-[2.2rem]" onClick={() => writeAsync()} disabled={isLoading}>
-        {isLoading ? <span className="loading loading-spinner loading-sm"></span> : <>Send</>}
+      <div>
+        <h1 className="text-2xl font-bold py-5">Create Startup</h1>
+      </div>
+      <div>
+        <p className="text">Name of Startup</p>
+        <InputBase name="startupName" placeholder="Name of Startup" value={startupName} onChange={setStartupName} />
+      </div>
+      <div>
+        <p className="text">Symbol</p>
+        <InputBase name="startupSymbol" placeholder="SYMBL" value={startupSymbol} onChange={setStartupSymbol} />
+      </div>
+      <div>
+        <p className="text">Total Shares</p>
+        <InputBase
+          name="startupShareCount"
+          placeholder="1000"
+          value={startupShareCount}
+          onChange={setStartupShareCount}
+        />
+      </div>
+      <div>
+        <p className="text">Price per Share</p>
+        <InputBase
+          name="startupPricePShare"
+          placeholder="10 USD"
+          value={startupPricePShare}
+          onChange={setStartupPricePShare}
+        />
+      </div>
+      <button
+        className="btn btn-primary font-light text-white rounded w-full mt-4"
+        onClick={() => writeAsync()}
+        disabled={isLoading}
+      >
+        {isLoading ? <span className="loading loading-spinner loading-sm"></span> : <>Create Startup</>}
       </button>
     </>
   );

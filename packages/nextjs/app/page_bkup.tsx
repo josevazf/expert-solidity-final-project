@@ -3,10 +3,12 @@
 // import Link from "next/link";
 import { useState } from "react";
 import type { NextPage } from "next";
+import { useAccount } from "wagmi";
 // import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
-import { CreateStartup } from "~~/components/CreateStartup";
+import { Address } from "~~/components/scaffold-eth";
 
 const Home: NextPage = () => {
+  const { address: connectedAddress } = useAccount();
   const [activeTab, setActiveTab] = useState("tab1");
 
   const showTab1 = () => setActiveTab("tab1");
@@ -20,7 +22,10 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <div className="flex justify-center items-center space-x-2"></div>
+      <div className="flex justify-center items-center space-x-2">
+        <p className="my-2 font-medium">Connected Address:</p>
+        <Address address={connectedAddress} />
+      </div>
       <div className="flex items-center flex-col flex-grow pt-10">
         <div>
           <div className="text-black">
@@ -59,7 +64,34 @@ const Home: NextPage = () => {
               </div>
               {activeTab === "tab1" && (
                 <>
-                  <CreateStartup></CreateStartup>
+                  <div>
+                    <h1 className="text-2xl font-bold py-5">Create Startup</h1>
+                  </div>
+                  <div>
+                    <p className="text">Startup ID</p>
+                    <input type="number" placeholder="0" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Name of Startup</p>
+                    <input type="text" placeholder="Name of Startup" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Symbol</p>
+                    <input type="text" placeholder="SYMBL" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Owner Address</p>
+                    <input type="text" placeholder="0x...." className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Total Shares</p>
+                    <input type="number" placeholder="1000" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <div>
+                    <p className="text">Price per Share</p>
+                    <input type="number" placeholder="10" className="w-full bg-white rounded border-black" />
+                  </div>
+                  <button className="btn btn-primary font-light text-white rounded w-full mt-4">Create Startup</button>
                 </>
               )}
               {activeTab === "tab2" && (
