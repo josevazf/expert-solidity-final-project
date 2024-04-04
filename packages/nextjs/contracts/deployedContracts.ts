@@ -194,6 +194,19 @@ const deployedContracts = {
         },
         {
           type: "function",
+          name: "oracle",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "contract AggregatorV3Interface",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
           name: "owner",
           inputs: [],
           outputs: [
@@ -808,6 +821,19 @@ const deployedContracts = {
         },
         {
           type: "function",
+          name: "oracleImplementation",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
           name: "ownerToStartup",
           inputs: [
             {
@@ -1341,6 +1367,19 @@ const deployedContracts = {
               name: "",
               type: "string",
               internalType: "string",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "oracle",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "contract AggregatorV3Interface",
             },
           ],
           stateMutability: "view",
@@ -1953,6 +1992,19 @@ const deployedContracts = {
         },
         {
           type: "function",
+          name: "oracleImplementation",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
           name: "ownerToStartup",
           inputs: [
             {
@@ -2296,7 +2348,7 @@ const deployedContracts = {
   },
   11155111: {
     StartupSwap: {
-      address: "0x19659992953cb8Bd924349aF743B27f875b024d2",
+      address: "0xDA7eF4A6cdd2E4a698f3bdF73fb0E1Fc533b3eA7",
       abi: [
         {
           type: "constructor",
@@ -2477,6 +2529,19 @@ const deployedContracts = {
               name: "",
               type: "string",
               internalType: "string",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "oracle",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "contract AggregatorV3Interface",
             },
           ],
           stateMutability: "view",
@@ -2805,7 +2870,7 @@ const deployedContracts = {
       },
     },
     StartupFactory: {
-      address: "0x3065d55c6a7b2A47dE4D2DBfD14D80431b7fFEce",
+      address: "0x28aBe876b819A529E36aFc55E86922c75c781Ac4",
       abi: [
         {
           type: "constructor",
@@ -3083,6 +3148,19 @@ const deployedContracts = {
               name: "",
               type: "bool",
               internalType: "bool",
+            },
+          ],
+          stateMutability: "view",
+        },
+        {
+          type: "function",
+          name: "oracleImplementation",
+          inputs: [],
+          outputs: [
+            {
+              name: "",
+              type: "address",
+              internalType: "address",
             },
           ],
           stateMutability: "view",

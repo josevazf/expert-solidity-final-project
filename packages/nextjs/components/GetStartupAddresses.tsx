@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GetSymbol } from "./GetSymbol";
 import { useScaffoldContractRead } from "~~/hooks/scaffold-eth";
 
 export const GetStartupAddress = ({
@@ -26,17 +27,20 @@ export const GetStartupAddress = ({
 
   return (
     <div>
-      <h2 className="font-bold m-0">Created Contracts:</h2>
       {isStartupAddressesLoading ? (
         <p>Loading...</p>
       ) : (
         <div>
           {addressesArray.length > 0 ? (
-            <select value={selectedAddressState} onChange={handleAddressChange}>
-              <option value="">Select an address</option>
+            <select
+              value={selectedAddressState}
+              onChange={handleAddressChange}
+              className=" bg-white rounded border-black m-2 p-1 absolute right-0 top-1"
+            >
+              <option value="">Token</option>
               {addressesArray.map((address, index) => (
                 <option key={index} value={address}>
-                  {address}
+                  <GetSymbol selectedAddress={address}></GetSymbol>
                 </option>
               ))}
             </select>
