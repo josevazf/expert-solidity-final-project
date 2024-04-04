@@ -21,6 +21,10 @@ const Home: NextPage = () => {
   const showBuy = () => setBuySell("buy");
   const showSell = () => setBuySell("sell");
 
+  // const [activeDetails, setActiveDetails] = useState(false);
+
+  // const handleActiveDetails = () => setActiveDetails(!activeDetails);
+
   return (
     <>
       <div className="flex justify-center items-center space-x-2"></div>
@@ -96,6 +100,52 @@ const Home: NextPage = () => {
           </div>
         </div>
       </div>
+      {/* {true && (
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
+          <div className="bg-white rounded-xl p-6 w-[580px] h-full">
+            <div className="flex flex-row justify-between">
+              <h1 className="text-2xl font-bold text-black">Details</h1>
+              <p onClick={handleActiveDetails}>X</p>
+            </div>
+            <div className="bg-gray-200 my-4 p-4">
+              <span className="flex justify-between">
+                <p className="text-black">Trade Type</p>
+                <p className="text-black">BUY</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black">Amount of Shares</p>
+                <p className="text-black">1000</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black">Price per Share</p>
+                <p className="text-black">1 ETH</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black">Total Share Price</p>
+                <p className="text-black">1000 ETH</p>
+              </span>
+            </div>
+            <div className="bg-gray-200 my-4 p-4">
+              <span className="flex justify-between">
+                <p className="text-black">Brokerbot Contract</p>
+                <p className="text-black">0x...</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black">DAKS Contract</p>
+                <p className="text-black">0x...</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black">XCHF Contract</p>
+                <p className="text-black">0x...</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black">Payment Hub Contract</p>
+                <p className="text-black">0x...</p>
+              </span>
+            </div>
+          </div>
+        </div>
+      )} */}
     </>
   );
 };
