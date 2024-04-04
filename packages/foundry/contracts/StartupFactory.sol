@@ -29,7 +29,7 @@ contract StartupFactory is Pausable, AccessControlEnumerable {
 
     address public contractOwner;
 
-    address private oracleImplementation;
+    address public oracleImplementation;
 
     event StartupCreated(address indexed owner, address indexed startup);
 

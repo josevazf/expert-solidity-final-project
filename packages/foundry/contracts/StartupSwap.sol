@@ -19,7 +19,7 @@ contract StartupSwap is ERC20Upgradeable {
     uint256 public totalShareCount;
     uint256 public pricePerShare;
     address public owner;
-    AggregatorV3Interface private oracle;
+    AggregatorV3Interface public oracle;
 
     constructor() {
         _disableInitializers();
