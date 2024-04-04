@@ -28,10 +28,10 @@ const Home: NextPage = () => {
   return (
     <>
       <div className="flex justify-center items-center space-x-2"></div>
-      <div className="flex items-center flex-col flex-grow pt-10">
-        <div>
-          <div className="text-black">
-            <div className="bg-white rounded-xl p-6 w-[580px]">
+      <div className="flex items-center flex-col flex-grow pt-10 bg-white">
+        <div className="">
+          <div className="text-black ">
+            <div className="bg-white rounded-xl p-6 w-[580px] border-black border-2">
               <div className="flex flex-row justify-around text-xs">
                 <nav
                   className={`flex-1 text-center py-2 hover:cursor-pointer transition-opacity duration-500 ease-in-out ${
@@ -53,7 +53,7 @@ const Home: NextPage = () => {
                 >
                   Swap
                 </nav>
-                <nav
+                {/* <nav
                   className={`flex-1 text-center py-2 hover:cursor-pointer transition-opacity duration-500 ease-in-out ${
                     activeTab === "tab3"
                       ? "border-b-2 border-primary opacity-100"
@@ -62,7 +62,7 @@ const Home: NextPage = () => {
                   onClick={showTab3}
                 >
                   Confirmation
-                </nav>
+                </nav> */}
               </div>
               {activeTab === "tab1" && (
                 <>

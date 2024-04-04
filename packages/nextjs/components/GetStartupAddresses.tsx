@@ -26,7 +26,7 @@ export const GetStartupAddress = ({
   };
 
   return (
-    <div>
+    <div className="absolute right-0 top-1">
       {isStartupAddressesLoading ? (
         <p>Loading...</p>
       ) : (
@@ -35,7 +35,7 @@ export const GetStartupAddress = ({
             <select
               value={selectedAddressState}
               onChange={handleAddressChange}
-              className=" bg-white rounded border-black m-2 p-1 absolute right-0 top-1"
+              className=" bg-white rounded border-black m-2 p-1"
             >
               <option value="">Token</option>
               {addressesArray.map((address, index) => (

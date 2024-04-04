@@ -39,7 +39,7 @@ export const InputBase = <T extends { toString: () => string } | undefined = str
   }, [reFocus]);
 
   return (
-    <div>
+    <div className="w-full">
       {prefix}
       <input
         className="w-full bg-white rounded border-black"
