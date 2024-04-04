@@ -4,6 +4,7 @@ import { useTargetNetwork } from "../hooks/scaffold-eth/useTargetNetwork";
 import { GetNativeTokenPrice } from "./GetNativeTokenPrice";
 import { GetSharePrice } from "./GetSharePrice";
 import { GetStartupAddress } from "./GetStartupAddresses";
+import { GetSymbol } from "./GetSymbol";
 import * as shareTokenJson from "./assets/shareTokenABI.json";
 import { parseEther } from "viem";
 import { useContractWrite } from "wagmi";
@@ -15,12 +16,12 @@ export const BuyShares = ({ selectedAddress }: { selectedAddress: string }) => {
   const writeTx = useTransactor();
   const { targetNetwork } = useTargetNetwork();
   const [currentSelectedAddress, setSelectedAddress] = useState(selectedAddress);
-  const payValue =
+  const payValueNative =
     Number(amountSharesBuy) *
     (GetSharePrice({ selectedAddress: currentSelectedAddress }) /
       GetNativeTokenPrice({ selectedAddress: currentSelectedAddress }));
-  const toPay = !isNaN(payValue) ? payValue : 0;
-  console.log("VALUE", toPay / 10 ** 10);
+  const toPay = !isNaN(payValueNative) ? payValueNative : 0;
+  const payValueUSD = (Number(amountSharesBuy) * GetSharePrice({ selectedAddress: currentSelectedAddress })) / 10 ** 10;
 
   // Use the useScaffoldContractWrite hook to write to the contract
   const { writeAsync, isLoading } = useContractWrite({
@@ -52,15 +53,27 @@ export const BuyShares = ({ selectedAddress }: { selectedAddress: string }) => {
         <GetStartupAddress setSelectedAddress={setSelectedAddress} />
       </div>
       <p className="">Payment</p>
-      <div className="flex flex-row justify-between relative">
-        <input type="number" placeholder="1000" className="w-full" />
-        <select name="payment" id="payment" className=" bg-white rounded border-black m-2 p-1 absolute right-0 top-1">
+      <div className="flex flex-row justify-be  tween relative">
+        <input type="number" placeholder={`${(toPay / 10 ** 10).toString()}`} className="w-full" disabled />
+        <select
+          name="payment"
+          id="payment"
+          className=" bg-white rounded border-black m-2 p-1 absolute right-0 top-1"
+          disabled
+        >
           <option value="eth">ETH</option>
           <option value="usdc">USDC</option>
         </select>
       </div>
       <div className="flex flex-row justify-between relative">
-        <input className="w-full" type="text" placeholder="You are buying 1′000 DAKS for 13′230.8 XCHF." disabled />
+        <input
+          className="w-full"
+          type="text"
+          placeholder={`You are buying ${amountSharesBuy} ${GetSymbol({
+            selectedAddress: currentSelectedAddress,
+          })} for ${payValueUSD} USD.`}
+          disabled
+        />
         <button className="btn btn-sm btn-secondary font-light bg-white text-black rounded m-2 absolute right-0">
           Details
         </button>

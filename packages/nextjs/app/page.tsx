@@ -6,6 +6,7 @@ import type { NextPage } from "next";
 import { BuyShares } from "~~/components/BuyShares";
 // import { BugAntIcon, MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 import { CreateStartup } from "~~/components/CreateStartup";
+import { SellShares } from "~~/components/SellShares";
 
 const Home: NextPage = () => {
   const [activeTab, setActiveTab] = useState("tab1");
@@ -87,48 +88,7 @@ const Home: NextPage = () => {
                     </button>
                   </div>
                   {BuySell === "buy" && <BuyShares selectedAddress={selectedAddress}></BuyShares>}
-                  {BuySell === "sell" && (
-                    <>
-                      {/* <input type="number" placeholder="0" className="w-full bg-white rounded border-black" /> */}
-                      <div className="flex flex-row justify-between relative">
-                        <input type="number" placeholder="1000" className="w-full bg-white border-primary" />
-                        <select
-                          name="sell"
-                          id="sell"
-                          className=" bg-white rounded border-black m-2 p-1 absolute right-0 top-1"
-                        >
-                          <option value="eth">DAKS</option>
-                          <option value="usdc">USDC</option>
-                        </select>
-                      </div>
-                      <p className="">Amount to be received</p>
-                      <div className="flex flex-row justify-between relative">
-                        <input type="number" placeholder="1000" className="w-full" />
-                        <select
-                          name="received"
-                          id="received"
-                          className=" bg-white rounded border-black m-2 p-1 absolute right-0 top-1"
-                        >
-                          <option value="eth">ETH</option>
-                          <option value="usdc">USDC</option>
-                        </select>
-                      </div>
-                      <div className="flex flex-row justify-between relative">
-                        <input
-                          className="w-full"
-                          type="text"
-                          placeholder="You are selling 1′000 DAKS for 13′230.8 XCHF."
-                          disabled
-                        />
-                        <button className="btn btn-sm btn-secondary font-light bg-white text-black rounded m-2 absolute right-0">
-                          Details
-                        </button>
-                      </div>
-                      <button className="btn btn-primary font-light text-white rounded w-full mt-4">
-                        Start Selling
-                      </button>
-                    </>
-                  )}
+                  {BuySell === "sell" && <SellShares selectedAddress={selectedAddress}></SellShares>}
                 </>
               )}
               {activeTab === "tab3" && <div>This is the confirmation page</div>}
