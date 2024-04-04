@@ -44,6 +44,10 @@ export const BuyShares = ({ selectedAddress }: { selectedAddress: string }) => {
     }
   };
 
+  const [activeBuyDetails, setActiveBuyDetails] = useState(false);
+
+  const handleActiveBuyDetails = () => setActiveBuyDetails(!activeBuyDetails);
+
   return (
     <>
       {/* <input type="number" placeholder="0" className="w-full bg-white rounded border-primary" /> */}
@@ -61,7 +65,10 @@ export const BuyShares = ({ selectedAddress }: { selectedAddress: string }) => {
       </div>
       <div className="flex flex-row justify-between relative">
         <input className="w-full" type="text" placeholder="You are buying 1′000 DAKS for 13′230.8 XCHF." disabled />
-        <button className="btn btn-sm btn-secondary font-light bg-white text-black rounded m-2 absolute right-0">
+        <button
+          className="btn btn-sm btn-secondary font-light bg-white text-black rounded m-2 absolute right-0"
+          onClick={handleActiveBuyDetails}
+        >
           Details
         </button>
       </div>
@@ -72,6 +79,52 @@ export const BuyShares = ({ selectedAddress }: { selectedAddress: string }) => {
       >
         {isLoading ? <span className="loading loading-spinner loading-sm"></span> : <>Start Buying</>}
       </button>
+      {activeBuyDetails && (
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
+          <div className="bg-white rounded-xl p-6 w-[580px] h-full">
+            <div className="flex flex-row justify-between">
+              <h1 className="text-2xl font-bold text-black">Details</h1>
+              <p onClick={handleActiveBuyDetails}>X</p>
+            </div>
+            <div className="bg-gray-200 my-4 p-4">
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Trade Type</p>
+                <p className="text-black text-sm">BUY</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Amount of Shares</p>
+                <p className="text-black text-sm">1000</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Price per Share</p>
+                <p className="text-black text-sm">1 ETH</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Total Share Price</p>
+                <p className="text-black text-sm">1000 ETH</p>
+              </span>
+            </div>
+            <div className="bg-gray-200 my-4 p-4">
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Brokerbot Contract</p>
+                <p className="text-black text-sm">0x...</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">DAKS Contract</p>
+                <p className="text-black text-sm">0x...</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">XCHF Contract</p>
+                <p className="text-black text-sm">0x...</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Payment Hub Contract</p>
+                <p className="text-black text-sm">0x...</p>
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };

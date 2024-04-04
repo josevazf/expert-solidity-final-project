@@ -34,6 +34,10 @@ export const SellShares = ({ selectedAddress }: { selectedAddress: string }) => 
     }
   };
 
+  const [activeSellDetails, setActiveSellDetails] = useState(false);
+
+  const handleActiveSellDetails = () => setActiveSellDetails(!activeSellDetails);
+
   return (
     <>
       <InputBase name="amountOfSharesSell" placeholder="0.0" value={amountSharesSell} onChange={setAmountSharesSell} />
@@ -46,6 +50,48 @@ export const SellShares = ({ selectedAddress }: { selectedAddress: string }) => 
           </>
         )}
       </button>
+      {activeSellDetails && (
+        <div className="absolute inset-0 bg-black bg-opacity-50 flex justify-center items-center z-10">
+          <div className="bg-white rounded-xl p-6 w-[580px] h-full">
+            <div className="flex flex-row justify-between">
+              <h1 className="text-2xl font-bold text-black">Details</h1>
+              <p onClick={handleActiveSellDetails}>X</p>
+            </div>
+            <div className="bg-gray-200 my-4 p-4">
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Trade Type</p>
+                <p className="text-black text-sm">SELL</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Amount of Shares</p>
+                <p className="text-black text-sm">1000</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Price per Share</p>
+                <p className="text-black text-sm">1 ETH</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Total Share Price</p>
+                <p className="text-black text-sm">1000 ETH</p>
+              </span>
+            </div>
+            <div className="bg-gray-200 my-4 p-4">
+              <span className="flex justify-between">
+                <p className="text-black text-sm">Brokerbot Contract</p>
+                <p className="text-black text-sm">0x...</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">DAKS Contract</p>
+                <p className="text-black text-sm">0x...</p>
+              </span>
+              <span className="flex justify-between">
+                <p className="text-black text-sm">XCHF Contract</p>
+                <p className="text-black text-sm">0x...</p>
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 };
