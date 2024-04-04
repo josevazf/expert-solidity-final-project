@@ -2,19 +2,19 @@ import { useTargetNetwork } from "../hooks/scaffold-eth/useTargetNetwork";
 import * as shareTokenJson from "./assets/shareTokenABI.json";
 import { useContractRead } from "wagmi";
 
-export function GetSymbol({ selectedAddress }: { selectedAddress: string }) {
+export function GetShareName({ selectedAddress }: { selectedAddress: string }) {
   const { targetNetwork } = useTargetNetwork();
 
   const { data } = useContractRead({
     chainId: targetNetwork.id,
     address: selectedAddress,
     abi: shareTokenJson.abi,
-    functionName: "symbol",
+    functionName: "name",
     args: [],
     watch: true,
   });
 
-  const symbol = typeof data === "string" ? data : "-";
+  const name = typeof data === "string" ? data : "-";
 
-  return symbol;
+  return name;
 }

@@ -5,7 +5,7 @@
 import { GenericContractsDeclaration } from "~~/utils/scaffold-eth/contract";
 
 const deployedContracts = {
-  /*   31337: {
+/*   31337: {
     StartupSwap: {
       address: "0x4Abba9e9D7D460d13cd202dF5B0B5bf2441f2a35",
       abi: [
@@ -1186,7 +1186,7 @@ const deployedContracts = {
   }, */
   80001: {
     StartupSwap: {
-      address: "0x4Abba9e9D7D460d13cd202dF5B0B5bf2441f2a35",
+      address: "0x4236C093b8c0C32FB85fcA500FA5F1feee9839eD",
       abi: [
         {
           type: "constructor",
@@ -1696,19 +1696,27 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {
-        allowance: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        approve: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        balanceOf: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        decimals: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        allowance:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        approve:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        balanceOf:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        decimals:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
         name: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        symbol: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        totalSupply: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        transfer: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        transferFrom: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        symbol:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        totalSupply:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        transfer:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        transferFrom:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
       },
     },
     StartupFactory: {
-      address: "0x4a72989E27E642c6cB6A5852FE9024907c0Db8D7",
+      address: "0x035dD367FD1F11260AD161Af6390Cb144CF113a6",
       abi: [
         {
           type: "constructor",
@@ -2334,21 +2342,30 @@ const deployedContracts = {
       ],
       inheritedFunctions: {
         paused: "lib/openzeppelin-contracts/contracts/utils/Pausable.sol",
-        DEFAULT_ADMIN_ROLE: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        getRoleAdmin: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        getRoleMember: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        getRoleMemberCount: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        grantRole: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        hasRole: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        renounceRole: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        revokeRole: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        supportsInterface: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        DEFAULT_ADMIN_ROLE:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        getRoleAdmin:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        getRoleMember:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        getRoleMemberCount:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        grantRole:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        hasRole:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        renounceRole:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        revokeRole:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        supportsInterface:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
       },
     },
   },
   11155111: {
     StartupSwap: {
-      address: "0xDA7eF4A6cdd2E4a698f3bdF73fb0E1Fc533b3eA7",
+      address: "0x9C9F99D4cF470D5eDB07b0B9cB2b9Bde36AfcA76",
       abi: [
         {
           type: "constructor",
@@ -2858,19 +2875,27 @@ const deployedContracts = {
         },
       ],
       inheritedFunctions: {
-        allowance: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        approve: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        balanceOf: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        decimals: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        allowance:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        approve:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        balanceOf:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        decimals:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
         name: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        symbol: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        totalSupply: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        transfer: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
-        transferFrom: "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        symbol:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        totalSupply:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        transfer:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
+        transferFrom:
+          "lib/openzeppelin-contracts-upgradeable/contracts/token/ERC20/ERC20Upgradeable.sol",
       },
     },
     StartupFactory: {
-      address: "0x28aBe876b819A529E36aFc55E86922c75c781Ac4",
+      address: "0x1bF591a6C63b8BddbA0a1830DEc5E394a75C0e3e",
       abi: [
         {
           type: "constructor",
@@ -3496,15 +3521,24 @@ const deployedContracts = {
       ],
       inheritedFunctions: {
         paused: "lib/openzeppelin-contracts/contracts/utils/Pausable.sol",
-        DEFAULT_ADMIN_ROLE: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        getRoleAdmin: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        getRoleMember: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        getRoleMemberCount: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        grantRole: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        hasRole: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        renounceRole: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        revokeRole: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
-        supportsInterface: "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        DEFAULT_ADMIN_ROLE:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        getRoleAdmin:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        getRoleMember:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        getRoleMemberCount:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        grantRole:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        hasRole:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        renounceRole:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        revokeRole:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
+        supportsInterface:
+          "lib/openzeppelin-contracts/contracts/access/extensions/AccessControlEnumerable.sol",
       },
     },
   },

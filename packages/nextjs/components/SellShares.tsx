@@ -11,6 +11,8 @@ import { parseEther } from "viem";
 import { useContractWrite } from "wagmi";
 import { InputBase } from "~~/components/scaffold-eth";
 import { useTransactor } from "~~/hooks/scaffold-eth";
+import { GetShareName } from "./GetShareName";
+import { GetTotalShares } from "./GetTotalShares";
 
 export const SellShares = ({ selectedAddress }: { selectedAddress: string }) => {
   const [amountSharesSell, setAmountSharesSell] = useState<string | bigint>("");
@@ -85,7 +87,10 @@ export const SellShares = ({ selectedAddress }: { selectedAddress: string }) => 
           })} for ${payValueUSD} USD.`}
           disabled
         />
-        <button className="btn btn-sm btn-secondary font-light bg-white text-black rounded m-2 absolute right-0">
+        <button 
+          className="btn btn-sm btn-secondary font-light bg-white text-black rounded m-2 absolute right-0"
+          onClick={handleActiveSellDetails} 
+        >
           Details
         </button>
       </div>
@@ -104,34 +109,30 @@ export const SellShares = ({ selectedAddress }: { selectedAddress: string }) => 
               <p onClick={handleActiveSellDetails}>X</p>
             </div>
             <div className="bg-gray-200 my-4 p-4">
+            <span className="flex justify-between">
+                <p className="text-black text-sm">Share Name</p>
+                <p className="text-black text-sm"><GetShareName selectedAddress={currentSelectedAddress} /></p>
+              </span>
               <span className="flex justify-between">
-                <p className="text-black text-sm">Trade Type</p>
-                <p className="text-black text-sm">SELL</p>
+                <p className="text-black text-sm">Share Symbol</p>
+                <p className="text-black text-sm"><GetSymbol selectedAddress={currentSelectedAddress} /></p>
               </span>
               <span className="flex justify-between">
                 <p className="text-black text-sm">Amount of Shares</p>
-                <p className="text-black text-sm">1000</p>
+                <p className="text-black text-sm"><GetTotalShares selectedAddress={currentSelectedAddress} /></p>
               </span>
               <span className="flex justify-between">
                 <p className="text-black text-sm">Price per Share</p>
-                <p className="text-black text-sm">1 ETH</p>
-              </span>
-              <span className="flex justify-between">
-                <p className="text-black text-sm">Total Share Price</p>
-                <p className="text-black text-sm">1000 ETH</p>
+                <p className="text-black text-sm"><GetSharePrice selectedAddress={currentSelectedAddress} /></p>
               </span>
             </div>
             <div className="bg-gray-200 my-4 p-4">
               <span className="flex justify-between">
-                <p className="text-black text-sm">Brokerbot Contract</p>
-                <p className="text-black text-sm">0x...</p>
+                <p className="text-black text-sm">Share Contract</p>
+                <p className="text-black text-sm">{currentSelectedAddress}</p>
               </span>
               <span className="flex justify-between">
-                <p className="text-black text-sm">DAKS Contract</p>
-                <p className="text-black text-sm">0x...</p>
-              </span>
-              <span className="flex justify-between">
-                <p className="text-black text-sm">XCHF Contract</p>
+                <p className="text-black text-sm">Startup Factory Contract</p>
                 <p className="text-black text-sm">0x...</p>
               </span>
             </div>
